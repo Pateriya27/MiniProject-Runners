@@ -1,0 +1,66 @@
+spring:
+   profiles:
+      active: test
+
+---
+
+spring:
+  application:
+           name: BootIocProj14_Working_With_Profiles_YML
+  config:
+    activate:
+      on-profile:
+      - dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sys
+    username: root
+    password: manager
+    type: org.apache.commons.dbcp2.BasicDataSource
+
+---
+
+spring:
+  application:
+      name: BootIocProj14_Working_With_Profiles_YML
+  config:
+    activate:
+      on-profile:
+      - prod
+  datasource:
+        driver-class-name: oracle.jdbc.driver.OracleDriver
+        url: jdbc:oracle:thin:@localhost:1521:orcl
+        username: c##ram
+        password: ram
+
+---
+
+spring:
+    application:
+          name: BootIocProj14_Working_With_Profiles_YML
+    config:
+     activate:
+      on-profile:
+      - test
+    datasource:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://localhost:3306/sys
+          username: root
+          password: manager
+          type: com.mchange.v2.c3p0.ComboPooledDataSource
+
+---
+
+spring:
+     application:
+          name: BootIocProj14_Working_With_Profiles_YML
+     config:
+       activate:
+         on-profile:
+            - uat
+     datasource:
+          driver-class-name: oracle.jdbc.driver.OracleDriver
+          url: jdbc:oracle:thin:@localhost:1521:orcl
+          username: c##ram
+          password: ram
+          type: oracle.ucp.jdbc.PoolDataSourceImpl
